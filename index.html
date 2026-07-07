@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Sayangku Ayu melanda titian❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:Poppins,sans-serif;
+body{
+    background:linear-gradient(135deg,#ffb6d5,#ffdff0,#fff0f7);
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    min-height:100vh;
+    overflow-y:auto;
+    overflow-x:hidden;
+    padding:20px 0;
+}
+
+.bg{
+position:fixed;
+inset:0;
+backdrop-filter:blur(6px);
+}
+
+.card{
+position:relative;
+width:95%;
+max-width:420px;
+background:rgba(255,255,255,.25);
+backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,.4);
+border-radius:30px;
+padding:25px;
+text-align:center;
+box-shadow:0 15px 35px rgba(255,105,180,.3);
+animation:fade 1.2s;
+z-index:10;
+}
+
+.photo{
+width:180px;
+height:180px;
+border-radius:50%;
+object-fit:cover;
+border:6px solid #ff69b4;
+box-shadow:0 0 30px rgba(255,20,147,.4);
+}
+
+h1{
+font-family:"Great Vibes",cursive;
+font-size:48px;
+color:#ff1493;
+margin:15px 0;
+}
+
+#typing{
+font-size:18px;
+font-weight:500;
+color:#d10072;
+min-height:60px;
+}
+
+.counter{
+margin-top:15px;
+padding:12px;
+background:#fff5fb;
+border-radius:15px;
+color:#ff1493;
+font-weight:bold;
+}
+
+.gallery{
+display:flex;
+justify-content:center;
+gap:8px;
+margin-top:18px;
+flex-wrap:wrap;
+}
+
+.gallery img{
+width:75px;
+height:75px;
+border-radius:15px;
+object-fit:cover;
+border:2px solid pink;
+}
+
+button{
+margin-top:20px;
+padding:13px 30px;
+border:none;
+border-radius:30px;
+background:#ff4fa3;
+color:white;
+font-size:17px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.08);
+background:#ff1493;
+}
+
+#love{
+display:none;
+margin-top:18px;
+font-size:20px;
+color:#ff1493;
+font-weight:bold;
+animation:fade .7s;
+}
+
+.fall{
+position:fixed;
+top:-50px;
+pointer-events:none;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh) rotate(360deg);
+opacity:0;
+}
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(30px)}
+to{opacity:1;transform:translateY(0)}
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<div class="card">
+
+<img src="https://files.catbox.moe/4n5g0p.jpg" class="photo">
+
+<h1>Untuk Pacar ku Tercinta💗</h1>
+
+<p id="typing"></p>
+
+<div class="counter">
+💞 Bersama selama:
+<br>
+<span id="hari"></span>
+</div>
+
+<div class="gallery">
+    <img src="https://files.catbox.moe/4n5g0p.jpg">
+    <img src="https://files.catbox.moe/qez0dg.jpg">
+    <img src="https://files.catbox.moe/b72l2q.jpg">
+    <img src="https://files.catbox.moe/ynbw1p.jpg">
+</div>
+
+<button onclick="love()">
+Klik di sinii sayangg 💖
+</button>
+
+<div id="love">
+I always love you more than you expect . ❤️🌸
+</div>
+
+</div>
+
+<audio id="bgMusic" preload="auto">
+    <source src="https://files.catbox.moe/h8qyw2.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+window.onload = function () {
+    document.body.addEventListener("click", function () {
+        const music = document.getElementById("bgMusic");
+        music.play();
+    }, { once: true });
+};
+</script>
+
+<script>
+const text="Terima kasih karena sudah hadir di hidupku. Setiap hari bersamamu adalah hadiah yang tidak pernah berhenti aku syukuri. Kalau suatu saat nanti kita sedang bertengkar atau saling kecewa, semoga kita ingat bahwa kita pernah saling memilih dengan sepenuh hati. Aku tidak butuh seseorang yang sempurna, aku hanya ingin terus bersamamu. Aku sayang kamu, hari ini, besok, dan selama Tuhan masih mengizinkan kita bersama. ❤️🌸";
+let i=0;
+
+function ketik(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(ketik,55);
+}
+}
+ketik();
+
+const jadian=new Date("2026-05-4");
+function update(){
+const now=new Date();
+const selisih=now-jadian;
+const hari=Math.floor(selisih/1000/60/60/24);
+document.getElementById("hari").innerHTML=hari+" Hari";
+}
+setInterval(update,1000);
+update();
+
+function love(){
+document.getElementById("love").style.display="block";
+}
+
+function hujan(){
+const item=document.createElement("div");
+item.className="fall";
+item.innerHTML=Math.random()>0.5?"🌸":"💖";
+item.style.left=Math.random()*100+"vw";
+item.style.fontSize=(15+Math.random()*25)+"px";
+item.style.animationDuration=(4+Math.random()*4)+"s";
+document.body.appendChild(item);
+
+setTimeout(()=>item.remove(),8000);
+}
+setInterval(hujan,180);
+</script>
+<script>
+const music = document.getElementById("bgMusic");
+
+// Putar saat klik pertama
+document.addEventListener("click", () => {
+    music.play().catch(() => {});
+}, { once: true });
+
+// Berhenti saat halaman tidak terlihat
+document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+        music.pause();
+        music.currentTime = 0; // kembali ke awal
+    }
+});
+
+// Berhenti saat halaman ditutup
+window.addEventListener("beforeunload", () => {
+    music.pause();
+    music.currentTime = 0;
+});
+
+window.addEventListener("pagehide", () => {
+    music.pause();
+    music.currentTime = 0;
+});
+</script>
+</body>
+</html>
